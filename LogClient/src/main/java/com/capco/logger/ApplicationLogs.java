@@ -17,7 +17,6 @@ public class ApplicationLogs implements SCBLogger{
 	private AsyncRestTemplate asyncRestClient;
 	private org.slf4j.Logger slf4jLogger;
 	private String className=null;
-	//String url="http://localhost:9000/api/v1/logs/addApplicationLog";
 
 	public ApplicationLogs(String name) {
 		this.className=name;

@@ -133,7 +133,7 @@ public interface SCBLogger {
 
 	void initAsync();
 
-	//boolean isRemoteLoggingEnabled();
+	boolean isRemoteLoggingEnabled();
 
 
 

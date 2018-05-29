@@ -18,7 +18,6 @@ public class TransactionLogs implements SCBLogger{
 	private AsyncRestTemplate asyncRestClient;
 	private org.slf4j.Logger slf4jLogger;
 	private String className=null;
-	//private String url="http://localhost:9000/api/v1/logs/addTransactionLog";
 	
 	public TransactionLogs(String name) {
 		this.className=name;

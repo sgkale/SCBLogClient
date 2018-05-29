@@ -3,7 +3,6 @@ package com.capco.logger;
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
@@ -16,13 +15,10 @@ public class PropertyHolder {
 
 	@Value("${logging.remote.enable:false}")
 	private boolean enableRemoteLogging;
-	
+
 	@Value("${logging.remote.logfilename:General}")
 	private String logFileName;
 
-	//@Value("${logging.remote.url:http://localhost:9000/api/v1/logs/addLog}")
-	//private String loggingServiceURL;
-	
 	@Value("${logging.remote.application:http://localhost:9000/dummy}")
 	private String applicationUrl;
 	@Value("${logging.remote.audit:http://localhost:9000/dummy}")
@@ -37,8 +33,6 @@ public class PropertyHolder {
 	private static String staticTransactionUrl;
 	private static String staticLogFileName;
 
-	//private static String staticLoggingServiceURL;
-	
 	@PostConstruct
 	private void setStaticProperties() {
 		System.out.println("setting properties");
@@ -48,8 +42,6 @@ public class PropertyHolder {
 		setStaticAuditUrl(this.auditUrl);		
 		setStaticTransactionUrl(this.transactionUrl);
 		setStaticLogFileName(this.logFileName);
-		
-		//setStaticLoggingServiceURL(this.loggingServiceURL);
 	}
 
 	public String getLogFileName() {
@@ -77,13 +69,7 @@ public class PropertyHolder {
 	public static void setStaticEnableRemoteLogging(boolean enable) {
 		System.out.println(enable);
 		PropertyHolder.staticEnableRemoteLogging = enable;
-	}
-
-	/*public static void setStaticLoggingServiceURL(String url) {
-		System.out.println(url);
-		PropertyHolder.staticLoggingServiceURL = url;
-	}*/
-	
+	}	
 	public static String getApplicationName() {
 		return staticAppName;
 	}
@@ -91,10 +77,6 @@ public class PropertyHolder {
 	public static boolean isRemoteLoggingEnabled() {
 		return staticEnableRemoteLogging;
 	}
-
-	/*public static String getLoggingServiceURL() {
-		return staticLoggingServiceURL;
-	}*/
 
 	public String getAppName() {
 		return appName;
@@ -168,6 +150,6 @@ public class PropertyHolder {
 		PropertyHolder.staticTransactionUrl = staticTransactionUrl;
 	}
 
-	
+
 
 }
